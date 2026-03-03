@@ -1,0 +1,82 @@
+@model Project_DemoExam.ViewModels.RequestEditViewModel
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование заявки</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Заявка №@Model.Requestid</h2>
+            <a class="btn btn-outline-secondary" href="/Home/Index">Назад</a>
+        </div>
+        <hr />
+
+        <form method="post" action="/Home/Edit/@Model.Requestid" class="bg-white border rounded p-3">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="Requestid" value="@Model.Requestid" />
+
+            @if (User.IsInRole("Client"))
+            {
+                <div class="mb-3">
+                    <label class="form-label">Статус</label>
+                    <input class="form-control" value="@Model.Requeststatus" readonly />
+                    <input type="hidden" name="Requeststatus" value="@Model.Requeststatus" />
+                </div>
+            }
+            else
+            {
+                <div class="mb-3">
+                    <label class="form-label">Статус</label>
+                    <select class="form-select" name="Requeststatus">
+                        <option value="Новая" selected="@(Model.Requeststatus == "Новая")">Новая</option>
+                        <option value="В процессе ремонта" selected="@(Model.Requeststatus == "В процессе ремонта")">В процессе ремонта</option>
+                        <option value="Готово" selected="@(Model.Requeststatus == "Готово")">Готово</option>
+                        <option value="Выполнено" selected="@(Model.Requeststatus == "Выполнено")">Выполнено</option>
+                        <option value="Отменено" selected="@(Model.Requeststatus == "Отменено")">Отменено</option>
+                    </select>
+                    <div class="text-danger">@Html.ValidationMessageFor(m => m.Requeststatus)</div>
+                </div>
+            }
+
+            <div class="mb-3">
+                <label class="form-label">Описание проблемы</label>
+                <textarea class="form-control" name="Problemdesc" rows="4">@Model.Problemdesc</textarea>
+                <div class="text-danger">@Html.ValidationMessageFor(m => m.Problemdesc)</div>
+            </div>
+
+            @{
+                var currentMaster = Model.Masters.FirstOrDefault(x => x.Value == (Model.Masterid?.ToString() ?? ""));
+                var masterName = currentMaster?.Text ?? "Не назначен";
+            }
+
+            @if (User.IsInRole("Client"))
+            {
+                <div class="mb-3">
+                    <label class="form-label">Ответственный специалист</label>
+                    <input class="form-control" value="@masterName" readonly />
+                    <input type="hidden" name="Masterid" value="@Model.Masterid" />
+                </div>
+            }
+            else
+            {
+                <div class="mb-3">
+                    <label class="form-label">Ответственный специалист</label>
+                    <select class="form-select" name="Masterid">
+                        @foreach (var m in Model.Masters)
+                        {
+                            <option value="@m.Value" selected="@(m.Value == (Model.Masterid?.ToString() ?? ""))">@m.Text</option>
+                        }
+                    </select>
+                </div>
+            }
+
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+    </div>
+</body>
+</html>
+

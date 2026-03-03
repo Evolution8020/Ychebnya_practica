@@ -1,0 +1,103 @@
+@model Project_DemoExam.ViewModels.RequestIndexViewModel
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список заявок - Учет ремонта</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-4">
+        <h2>Управление заявками на ремонт</h2>
+        <hr>
+
+        @if (TempData["Error"] is string err && !string.IsNullOrWhiteSpace(err))
+        {
+            <div class="alert alert-danger">@err</div>
+        }
+
+        <form class="row g-2 mb-3" method="get" action="/Home/Index">
+            <div class="col-md-6">
+                <input type="text"
+                       class="form-control"
+                       name="q"
+                       value="@Model.Query"
+                       placeholder="Поиск: № заявки, тип, модель, проблема, ФИО..." />
+            </div>
+            <div class="col-md-3">
+                <select class="form-select" name="status">
+                    <option value="">Все статусы</option>
+                    <option value="Новая" selected="@(Model.Status == "Новая")">Новая</option>
+                    <option value="В процессе ремонта" selected="@(Model.Status == "В процессе ремонта")">В процессе ремонта</option>
+                    <option value="Готово" selected="@(Model.Status == "Готово")">Готово</option>
+                    <option value="Выполнено" selected="@(Model.Status == "Выполнено")">Выполнено</option>
+                    <option value="Отменено" selected="@(Model.Status == "Отменено")">Отменено</option>
+                </select>
+            </div>
+            <div class="col-md-3 text-end">
+                <button type="submit" class="btn btn-outline-primary">Найти</button>
+                <a href="/Home/Index" class="btn btn-outline-secondary">Сброс</a>
+                <a href="/Home/Create" class="btn btn-primary">Новая заявка</a>
+                @if (User.IsInRole("Specialist"))
+                {
+                    <a href="/Home/Statistics" class="btn btn-secondary">Статистика</a>
+                }
+            </div>
+        </form>
+
+        <div class="text-end mb-3">
+            <form method="post" action="/Auth/Logout" class="d-inline">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-outline-dark">Выйти</button>
+            </form>
+        </div>
+
+        @if ((Model.Requests?.Count ?? 0) == 0 && (!string.IsNullOrWhiteSpace(Model.Query) || !string.IsNullOrWhiteSpace(Model.Status)))
+        {
+            <div class="alert alert-warning">
+                По вашему запросу ничего не найдено.
+            </div>
+        }
+
+        <table class="table table-bordered table-hover bg-white">
+            <thead class="table-dark">
+                <tr>
+                    <th>Номер</th>
+                    <th>Дата</th>
+                    <th>Оборудование</th>
+                    <th>Модель</th>
+                    <th>ФИО заказчика</th>
+                    <th>Статус</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Requests)
+                {
+                    <tr>
+                        <td>@item.Requestid</td>
+                        <td>@item.Startdate.ToShortDateString()</td>
+                        <td>@item.Orgtechtype</td>
+                        <td>@item.Orgtechmodel</td>
+                        <td>@(item.Client?.Fio ?? "Не назначен")</td>
+                        <td>
+                            <span class="badge bg-info text-dark">@item.Requeststatus</span>
+                        </td>
+                        <td>
+                            @if (User.IsInRole("Specialist") || User.IsInRole("Client"))
+                            {
+                                <a href="/Home/Edit/@item.Requestid" class="btn btn-sm btn-outline-primary">Редактировать</a>
+                                <form method="post" action="/Home/Delete/@item.Requestid" class="d-inline" onsubmit="return confirm('Внимание! Вы уверены, что хотите удалить заявку №@item.Requestid? Это действие необратимо.');">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">Удалить</button>
+                                </form>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
