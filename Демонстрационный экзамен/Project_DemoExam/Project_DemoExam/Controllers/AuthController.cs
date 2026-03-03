@@ -50,8 +50,10 @@ public sealed class AuthController : Controller
             return View();
         }
 
+        // Роль пользователя из поля datausers.type
         var role = GetRoleFromType(user.Type);
 
+        // Claims попадут в auth-cookie
         var claims = new List<Claim>
         {
             new(ClaimTypes.NameIdentifier, user.Userid.ToString()),
@@ -62,6 +64,7 @@ public sealed class AuthController : Controller
         var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
         var principal = new ClaimsPrincipal(identity);
 
+        // Ставим auth-cookie
         HttpContext.SignInAsync(
             CookieAuthenticationDefaults.AuthenticationScheme,
             principal,
@@ -80,6 +83,7 @@ public sealed class AuthController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Logout()
     {
+        // Снимаем auth-cookie
         HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme).GetAwaiter().GetResult();
         return RedirectToAction(nameof(Login));
     }
@@ -92,6 +96,7 @@ public sealed class AuthController : Controller
 
     private static string GetRoleFromType(string type)
     {
+        // Нормализуем строковый тип из БД в роль приложения
         if (string.IsNullOrWhiteSpace(type)) return "Client";
 
         var t = type.Trim().ToLowerInvariant();
@@ -99,7 +104,15 @@ public sealed class AuthController : Controller
         if (t.Contains("client") || t.Contains("клиент") || t.Contains("заказчик"))
             return "Client";
 
-        // всё остальное считаем специалистами/операторами
+        // Оператор
+        if (t.Contains("оператор") || t.Contains("operator"))
+            return "Operator";
+
+        // Менеджер по качеству
+        if (t.Contains("кач") || t.Contains("quality") || t.Contains("менеджер"))
+            return "QualityManager";
+
+        // Специалист/мастер
         return "Specialist";
     }
 }

@@ -30,6 +30,7 @@ namespace Project_DemoExam.Controllers
 
             if (User.IsInRole("Client"))
             {
+                // Клиент видит только свои заявки
                 var userIdStr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
                 if (int.TryParse(userIdStr, out var userId))
                 {
@@ -176,6 +177,7 @@ namespace Project_DemoExam.Controllers
                                               pg.SqlState == "23505" &&
                                               string.Equals(pg.ConstraintName, $"{table}_pkey", StringComparison.Ordinal))
             {
+                // Если sequence PK отстала — пересинхронизируем и повторим сохранение
                 TryReseedSerialSequence(table, column);
                 _context.SaveChanges();
             }
@@ -190,6 +192,7 @@ namespace Project_DemoExam.Controllers
                 return;
             }
 
+            // Ресидим sequence через pg_get_serial_sequence + setval(max(id))
             var conn = _context.Database.GetDbConnection();
             var shouldClose = conn.State != ConnectionState.Open;
             if (shouldClose)
@@ -273,6 +276,7 @@ namespace Project_DemoExam.Controllers
 
             if (User.IsInRole("Client"))
             {
+                // Клиент может редактировать только свою заявку
                 var userIdStr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
                 if (!int.TryParse(userIdStr, out var userId) || request.Clientid != userId)
                 {
@@ -317,6 +321,7 @@ namespace Project_DemoExam.Controllers
             }
             if (User.IsInRole("Client"))
             {
+                // Повторная проверка на POST
                 var userIdStr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
                 if (!int.TryParse(userIdStr, out var userId) || request.Clientid != userId)
                 {
@@ -326,11 +331,13 @@ namespace Project_DemoExam.Controllers
 
             if (!User.IsInRole("Client"))
             {
+                // Статус и мастер меняют только сотрудники
                 request.Requeststatus = model.Requeststatus.Trim();
                 request.Masterid = model.Masterid;
 
                 if (request.Requeststatus == "Выполнено" || request.Requeststatus == "Готово")
                 {
+                    // Дата завершения нужна для статистики
                     request.Completiondate ??= DateOnly.FromDateTime(DateTime.Today);
                 }
             }
@@ -366,6 +373,7 @@ namespace Project_DemoExam.Controllers
 
             if (User.IsInRole("Client"))
             {
+                // Клиент может удалить только свою заявку
                 var userIdStr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
                 if (!int.TryParse(userIdStr, out var userId) || request.Clientid != userId)
                 {
