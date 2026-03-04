@@ -7,8 +7,12 @@
       "RelativeMoniker": "D:0:0:{CEEE5CEC-5A21-A557-C5A5-0694105C3687}|Project_DemoExam\\Project_DemoExam.csproj|solutionrelative:project_demoexam\\controllers\\homecontoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEEE5CEC-5A21-A557-C5A5-0694105C3687}|Project_DemoExam\\Project_DemoExam.csproj|c:\\users\\arsen\\desktop\\\u043A\u0438\u0440\u0430\u043A\u043E\u0441\u044F\u043D \u0430\u0440\u0441\u0435\u043D \u0443\u043F\\\u0434\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u044D\u043A\u0437\u0430\u043C\u0435\u043D\\project_demoexam\\project_demoexam\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CEEE5CEC-5A21-A557-C5A5-0694105C3687}|Project_DemoExam\\Project_DemoExam.csproj|solutionrelative:project_demoexam\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CEEE5CEC-5A21-A557-C5A5-0694105C3687}|Project_DemoExam\\Project_DemoExam.csproj|c:\\users\\arsen\\desktop\\\u043A\u0438\u0440\u0430\u043A\u043E\u0441\u044F\u043D \u0430\u0440\u0441\u0435\u043D \u0443\u043F\\\u0434\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u044D\u043A\u0437\u0430\u043C\u0435\u043D\\project_demoexam\\project_demoexam\\views\\home\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEEE5CEC-5A21-A557-C5A5-0694105C3687}|Project_DemoExam\\Project_DemoExam.csproj|solutionrelative:project_demoexam\\views\\home\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEEE5CEC-5A21-A557-C5A5-0694105C3687}|Project_DemoExam\\Project_DemoExam.csproj|c:\\users\\arsen\\desktop\\\u043A\u0438\u0440\u0430\u043A\u043E\u0441\u044F\u043D \u0430\u0440\u0441\u0435\u043D \u0443\u043F\\\u0434\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u044D\u043A\u0437\u0430\u043C\u0435\u043D\\project_demoexam\\project_demoexam\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEEE5CEC-5A21-A557-C5A5-0694105C3687}|Project_DemoExam\\Project_DemoExam.csproj|solutionrelative:project_demoexam\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CEEE5CEC-5A21-A557-C5A5-0694105C3687}|Project_DemoExam\\Project_DemoExam.csproj|c:\\users\\arsen\\desktop\\\u043A\u0438\u0440\u0430\u043A\u043E\u0441\u044F\u043D \u0430\u0440\u0441\u0435\u043D \u0443\u043F\\\u0434\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u044D\u043A\u0437\u0430\u043C\u0435\u043D\\project_demoexam\\project_demoexam\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,19 +29,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Arsen\\Desktop\\\u041A\u0438\u0440\u0430\u043A\u043E\u0441\u044F\u043D \u0410\u0440\u0441\u0435\u043D \u0423\u041F\\\u0414\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u044D\u043A\u0437\u0430\u043C\u0435\u043D\\Project_DemoExam\\Project_DemoExam\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Project_DemoExam\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Arsen\\Desktop\\\u041A\u0438\u0440\u0430\u043A\u043E\u0441\u044F\u043D \u0410\u0440\u0441\u0435\u043D \u0423\u041F\\\u0414\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u044D\u043A\u0437\u0430\u043C\u0435\u043D\\Project_DemoExam\\Project_DemoExam\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Project_DemoExam\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAADsAAAAAAAAAAAAAAFMAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-02T18:27:39.056Z"
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Arsen\\Desktop\\\u041A\u0438\u0440\u0430\u043A\u043E\u0441\u044F\u043D \u0410\u0440\u0441\u0435\u043D \u0423\u041F\\\u0414\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u044D\u043A\u0437\u0430\u043C\u0435\u043D\\Project_DemoExam\\Project_DemoExam\\Views\\Home\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Project_DemoExam\\Views\\Home\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\Arsen\\Desktop\\\u041A\u0438\u0440\u0430\u043A\u043E\u0441\u044F\u043D \u0410\u0440\u0441\u0435\u043D \u0423\u041F\\\u0414\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u044D\u043A\u0437\u0430\u043C\u0435\u043D\\Project_DemoExam\\Project_DemoExam\\Views\\Home\\Index.cshtml.cs",
+              "RelativeToolTip": "Project_DemoExam\\Views\\Home\\Index.cshtml.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T13:34:39.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Arsen\\Desktop\\\u041A\u0438\u0440\u0430\u043A\u043E\u0441\u044F\u043D \u0410\u0440\u0441\u0435\u043D \u0423\u041F\\\u0414\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u044D\u043A\u0437\u0430\u043C\u0435\u043D\\Project_DemoExam\\Project_DemoExam\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Project_DemoExam\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Arsen\\Desktop\\\u041A\u0438\u0440\u0430\u043A\u043E\u0441\u044F\u043D \u0410\u0440\u0441\u0435\u043D \u0423\u041F\\\u0414\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u044D\u043A\u0437\u0430\u043C\u0435\u043D\\Project_DemoExam\\Project_DemoExam\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Project_DemoExam\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T13:32:00.5Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -47,14 +65,14 @@
               "RelativeDocumentMoniker": "Project_DemoExam\\Controllers\\HomeContoller.cs",
               "ToolTip": "C:\\Users\\Arsen\\Desktop\\\u041A\u0438\u0440\u0430\u043A\u043E\u0441\u044F\u043D \u0410\u0440\u0441\u0435\u043D \u0423\u041F\\\u0414\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u044D\u043A\u0437\u0430\u043C\u0435\u043D\\Project_DemoExam\\Project_DemoExam\\Controllers\\HomeContoller.cs",
               "RelativeToolTip": "Project_DemoExam\\Controllers\\HomeContoller.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAEwGMAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-02T18:23:56.979Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\appsettings.json",
               "RelativeDocumentMoniker": "..\\..\\..\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\appsettings.json",
@@ -66,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Arsen\\Desktop\\\u041A\u0438\u0440\u0430\u043A\u043E\u0441\u044F\u043D \u0410\u0440\u0441\u0435\u043D \u0423\u041F\\\u0414\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u044D\u043A\u0437\u0430\u043C\u0435\u043D\\Project_DemoExam\\Project_DemoExam\\Program.cs",
               "RelativeDocumentMoniker": "Project_DemoExam\\Program.cs",
@@ -74,7 +92,8 @@
               "RelativeToolTip": "Project_DemoExam\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-02T15:32:56.775Z"
+              "WhenOpened": "2026-03-02T15:32:56.775Z",
+              "EditorCaption": ""
             }
           ]
         }

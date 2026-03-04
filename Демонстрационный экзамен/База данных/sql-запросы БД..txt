@@ -1,0 +1,37 @@
+-- 1. Создание таблицы Пользователей
+CREATE TABLE datausers (
+    userID SERIAL PRIMARY KEY,
+    fio VARCHAR(150) NOT NULL,
+    phone VARCHAR(20),       -- Тип VARCHAR, чтобы большие номера телефонов помещались без ошибок
+    login VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    type VARCHAR(50) NOT NULL
+);
+
+-- 2. Создание таблицы Заявок
+CREATE TABLE datarequests (
+    requestID SERIAL PRIMARY KEY,
+    startDate DATE NOT NULL,
+    orgTechType VARCHAR(100) NOT NULL,
+    orgTechModel VARCHAR(100) NOT NULL,
+    problemDesc TEXT NOT NULL,
+    requestStatus VARCHAR(50) NOT NULL,
+    completionDate DATE,
+    repairParts TEXT,
+    masterID INT,
+    clientID INT NOT NULL,
+    -- Связи (внешние ключи) с таблицей пользователей
+    FOREIGN KEY (masterID) REFERENCES datausers(userID),
+    FOREIGN KEY (clientID) REFERENCES datausers(userID)
+);
+
+-- 3. Создание таблицы Комментариев
+CREATE TABLE datacomments (
+    commentID SERIAL PRIMARY KEY,
+    message TEXT NOT NULL,
+    masterID INT NOT NULL,
+    requestID INT NOT NULL,
+    -- Связи (внешние ключи) с пользователями и заявками
+    FOREIGN KEY (masterID) REFERENCES datausers(userID),
+    FOREIGN KEY (requestID) REFERENCES datarequests(requestID)
+);
