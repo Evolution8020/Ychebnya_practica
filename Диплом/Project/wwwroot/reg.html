@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация — Система учёта молочной продукции</title>
+    <script>
+        (function () {
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = saved || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <link rel="stylesheet" href="theme_base.css">
+    <link rel="stylesheet" href="style_reg.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-header">
+            <h1>Учёт молочной продукции</h1>
+            <p>Создание аккаунта</p>
+        </div>
+
+        <form class="auth-form" id="registerForm">
+            <div class="form-group">
+                <label for="fullName">ФИО *</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Иванов Иван Иванович">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+            </div>
+
+            <div class="form-group">
+                <label for="username">Логин *</label>
+                <input type="text" id="username" name="username" required placeholder="Придумайте логин">
+                <small style="color: #666; font-size: 12px;">Латиница, без пробелов</small>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Пароль *</label>
+                <input type="password" id="password" name="password" required minlength="6" placeholder="Не менее 6 символов">
+                <small style="color: #666; font-size: 12px;">Минимум 6 символов</small>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Подтвердите пароль *</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Повторите пароль">
+            </div>
+
+            <div class="form-group">
+                <label for="department">Подразделение</label>
+                <select id="department" name="department">
+                    <option value="">Выберите подразделение</option>
+                </select>
+            </div>
+
+            <button type="submit" class="auth-btn">Зарегистрироваться</button>
+        </form>
+
+        <div class="auth-footer">
+            <p>Уже есть аккаунт? <a href="login.html">Войти в систему</a></p>
+        </div>
+    </div>
+
+    <script src="user_menu.js"></script>
+    <script src="script_reg.js"></script>
+</body>
+</html>

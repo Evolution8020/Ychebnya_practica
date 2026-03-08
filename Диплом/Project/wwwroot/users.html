@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = saved || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <link rel="stylesheet" href="theme_base.css">
+    <link rel="stylesheet" href="style_settings.css">
+    <title>Пользователи — Система учёта молочной продукции</title>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Учёт молочной<br>продукции</h1>
+
+        <div class="nav">
+            <div class="nav-item">
+                <a href="home.html">Главная</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Справочники <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="nomenclature.html">Номенклатура</a>
+                    <a href="warehouse.html">Склады</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Производство <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="production.html">Отчет производства за смену</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Запасы <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="receipts.html">Поступление товаров</a>
+                    <a href="write_off.html">Списание товаров</a>
+                    <a href="transfers.html">Перемещение товаров</a>
+                    <a href="stock_balance.html">Ведомость по товарам на складах</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Экспорт <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="export.html">Экспорт отчётов</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Настройки <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="users.html">Пользователи</a>
+                    <a href="departments.html">Подразделения</a>
+                    <a href="counterparties.html">Контрагенты</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="header">
+            <h2>Управление пользователями</h2>
+            <div class="user-info">
+                Пользователь: <b id="currentUser">...</b>
+                <div class="logout-menu" id="logoutMenu">
+                    <button id="logoutBtn">Выйти</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <button class="btn-add" onclick="openModal()">+ Добавить пользователя</button>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Поиск по имени или логину..." onkeyup="filterTable()">
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Логин</th>
+                    <th>ФИО</th>
+                    <th>Роль</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody id="usersTable">
+                <!-- Данные загружаются через JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+    <div class="modal" id="userModal">
+        <div class="modal-header">
+            <h3 id="modalTitle">Добавить пользователя</h3>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="userForm">
+                <div class="form-group">
+                    <label for="username">Логин *</label>
+                    <input type="text" id="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Пароль *</label>
+                    <input type="password" id="password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fullName">ФИО *</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="role">Роль *</label>
+                    <select id="role" required>
+                        <option value="admin">Администратор</option>
+                        <option value="user">Пользователь</option>
+                        <option value="viewer">Только просмотр</option>
+                    </select>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="closeModal()">Отмена</button>
+                    <button type="submit" class="btn-save">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin_check.js"></script>
+    <script src="user_menu.js"></script>
+    <script src="script_users.js"></script>
+</body>
+</html>
+

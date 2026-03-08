@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = saved || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <link rel="stylesheet" href="theme_base.css">
+    <link rel="stylesheet" href="style_home.css">
+    <title>Главная — Система учёта молочной продукции</title>
+    <!-- Chart.js для графиков -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Учёт молочной<br>продукции</h1>
+
+        <div class="nav">
+            <div class="nav-item">
+                <a href="home.html">Главная</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Справочники <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="nomenclature.html">Номенклатура</a>
+                    <a href="warehouse.html">Склады</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Производство <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="production.html">Отчет производства за смену</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Запасы <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="receipts.html">Поступление товаров</a>
+                    <a href="write_off.html">Списание товаров</a>
+                    <a href="transfers.html">Перемещение товаров</a>
+                    <a href="stock_balance.html">Ведомость по товарам на складах</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Экспорт <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="export.html">Экспорт отчётов</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Настройки <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="users.html">Пользователи</a>
+                    <a href="departments.html">Подразделения</a>
+                    <a href="counterparties.html">Контрагенты</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="header">
+            <h2>Главная панель</h2>
+            <div class="header-right">
+                <div class="current-time" id="currentTime"></div>
+                <div class="user-info">
+                    Пользователь: <b id="currentUser">...</b>
+                    <div class="logout-menu" id="logoutMenu">
+                        <button id="logoutBtn">Выйти</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Основные карточки статистики -->
+        <div class="cards">
+            <div class="card card-production" data-type="production-today">
+                <div class="card-icon">🏭</div>
+                <div class="card-content">
+                    <h3>Произведено сегодня</h3>
+                    <p class="card-value"><span class="loading-text">Загрузка...</span></p>
+                </div>
+            </div>
+            <div class="card card-stock" data-type="stock">
+                <div class="card-icon">📦</div>
+                <div class="card-content">
+                    <h3>Остатки на складах</h3>
+                    <p class="card-value"><span class="loading-text">Загрузка...</span></p>
+                </div>
+            </div>
+            <div class="card card-receipts" data-type="receipts">
+                <div class="card-icon">📥</div>
+                <div class="card-content">
+                    <h3>Поступления за месяц</h3>
+                    <p class="card-value"><span class="loading-text">Загрузка...</span></p>
+                </div>
+            </div>
+            <div class="card card-writeoffs" data-type="writeoffs">
+                <div class="card-icon">📤</div>
+                <div class="card-content">
+                    <h3>Списано за месяц</h3>
+                    <p class="card-value"><span class="loading-text">Загрузка...</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Дополнительные карточки -->
+        <div class="cards cards-secondary">
+            <div class="card card-small" data-type="nomenclature-count">
+                <div class="card-icon">📋</div>
+                <div class="card-content">
+                    <h3>Номенклатура</h3>
+                    <p class="card-value"><span class="loading-text">...</span></p>
+                </div>
+            </div>
+            <div class="card card-small" data-type="warehouses-count">
+                <div class="card-icon">🏪</div>
+                <div class="card-content">
+                    <h3>Складов</h3>
+                    <p class="card-value"><span class="loading-text">...</span></p>
+                </div>
+            </div>
+            <div class="card card-small" data-type="reports-count">
+                <div class="card-icon">📄</div>
+                <div class="card-content">
+                    <h3>Отчётов производства</h3>
+                    <p class="card-value"><span class="loading-text">...</span></p>
+                </div>
+            </div>
+            <div class="card card-small" data-type="counterparties-count">
+                <div class="card-icon">🤝</div>
+                <div class="card-content">
+                    <h3>Контрагентов</h3>
+                    <p class="card-value"><span class="loading-text">...</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Графики -->
+        <div class="charts-section">
+            <div class="chart-container">
+                <h3 class="section-title">📈 Производство за последние 7 дней</h3>
+                <canvas id="productionChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3 class="section-title">📊 Остатки по складам</h3>
+                <canvas id="stockChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Последние операции -->
+        <div class="tables-section">
+            <div class="table-container">
+                <h3 class="section-title">🏭 Последние отчёты производства</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>№ документа</th>
+                            <th>Дата</th>
+                            <th>Подразделение</th>
+                            <th>Склад</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productionTable">
+                        <tr><td colspan="4" class="loading-row">Загрузка...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-container">
+                <h3 class="section-title">📥 Последние поступления</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>№ документа</th>
+                            <th>Дата</th>
+                            <th>Контрагент</th>
+                            <th>Сумма</th>
+                        </tr>
+                    </thead>
+                    <tbody id="receiptsTable">
+                        <tr><td colspan="4" class="loading-row">Загрузка...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="user_menu.js"></script>
+    <script src="script_home.js"></script>
+</body>
+</html>

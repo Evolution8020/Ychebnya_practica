@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = saved || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <link rel="stylesheet" href="theme_base.css">
+    <title>Экспорт отчётов — Система учёта молочной продукции</title>
+    <link rel="stylesheet" href="style_export.css">
+    <!-- Библиотеки для экспорта -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- pdfmake с поддержкой кириллицы -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.min.js"></script>
+</head>
+<body>
+    <!-- Боковая панель -->
+    <div class="sidebar">
+        <h1>Учёт молочной<br>продукции</h1>
+
+        <div class="nav">
+
+            <div class="nav-item">
+                <a href="home.html">Главная</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Справочники <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="nomenclature.html">Номенклатура</a>
+                    <a href="warehouse.html">Склады</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Производство <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="production.html">Отчет производства за смену</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Запасы <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="receipts.html">Поступление товаров</a>
+                    <a href="write_off.html">Списание товаров</a>
+                    <a href="transfers.html">Перемещение товаров</a>
+                    <a href="stock_balance.html">Ведомость по товарам на складах</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Экспорт <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="export.html" class="active">Экспорт отчётов</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Настройки <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="users.html">Пользователи</a>
+                    <a href="departments.html">Подразделения</a>
+                    <a href="counterparties.html">Контрагенты</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Основная часть -->
+    <div class="main">
+        <div class="header">
+            <h2>Экспорт отчётов</h2>
+            <div class="user-info">
+                Пользователь: <b id="currentUser">...</b>
+                <div class="logout-menu" id="logoutMenu">
+                    <button id="logoutBtn">Выйти</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Выбор типа отчёта -->
+        <div class="export-container">
+            <div class="report-type-selector">
+                <h3>Выберите тип отчёта</h3>
+                <div class="report-types">
+                    <label class="report-type-card">
+                        <input type="radio" name="reportType" value="production" checked>
+                        <div class="card-content">
+                            <div class="card-icon">📋</div>
+                            <div class="card-title">Отчёт производства</div>
+                            <div class="card-desc">Данные о производстве продукции за выбранный период</div>
+                        </div>
+                    </label>
+                    <label class="report-type-card">
+                        <input type="radio" name="reportType" value="stock">
+                        <div class="card-content">
+                            <div class="card-icon">📦</div>
+                            <div class="card-title">Ведомость по товарам</div>
+                            <div class="card-desc">Остатки и движение товаров на складах</div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Настройки фильтрации -->
+            <div class="filter-section">
+                <h3>Настройки отчёта</h3>
+                
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label>Период с:</label>
+                        <input type="date" id="dateFrom">
+                    </div>
+                    <div class="filter-group">
+                        <label>По:</label>
+                        <input type="date" id="dateTo">
+                    </div>
+                </div>
+
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label>Склад:</label>
+                        <select id="warehouseSelect">
+                            <option value="">Все склады</option>
+                        </select>
+                    </div>
+                    <div class="filter-group" id="departmentGroup">
+                        <label>Подразделение:</label>
+                        <select id="departmentSelect">
+                            <option value="">Все подразделения</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter-row" id="nomenclatureRow">
+                    <div class="filter-group">
+                        <label>Номенклатура:</label>
+                        <select id="nomenclatureSelect">
+                            <option value="">Вся номенклатура</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Предварительный просмотр -->
+            <div class="preview-section">
+                <div class="preview-header">
+                    <h3>Предварительный просмотр</h3>
+                    <button id="refreshPreviewBtn" class="btn-refresh">Обновить</button>
+                </div>
+                <div class="preview-info">
+                    <span id="recordCount">Записей: 0</span>
+                </div>
+                <div class="preview-table-container">
+                    <table id="previewTable">
+                        <thead></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Кнопки экспорта -->
+            <div class="export-actions">
+                <button id="exportExcelBtn" class="btn-export btn-excel">
+                    <span class="btn-icon">📊</span>
+                    Экспорт в Excel
+                </button>
+                <button id="exportPdfBtn" class="btn-export btn-pdf">
+                    <span class="btn-icon">📄</span>
+                    Экспорт в PDF
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="user_menu.js"></script>
+    <script src="script_export.js"></script>
+</body>
+</html>
+

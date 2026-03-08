@@ -1,0 +1,133 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{35AB7863-D16F-4400-AAE7-C56A5607D924}|Project.csproj|c:\\users\\arsen\\desktop\\\u0443\u0447\u0435\u0431\u0430\\\u0442\u0440\u043F\u043E\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\project\\wwwroot\\script_transfers.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{35AB7863-D16F-4400-AAE7-C56A5607D924}|Project.csproj|solutionrelative:wwwroot\\script_transfers.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35AB7863-D16F-4400-AAE7-C56A5607D924}|Project.csproj|c:\\users\\arsen\\desktop\\\u0443\u0447\u0435\u0431\u0430\\\u0442\u0440\u043F\u043E\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\project\\wwwroot\\transfers.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{35AB7863-D16F-4400-AAE7-C56A5607D924}|Project.csproj|solutionrelative:wwwroot\\transfers.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35AB7863-D16F-4400-AAE7-C56A5607D924}|Project.csproj|c:\\users\\arsen\\desktop\\\u0443\u0447\u0435\u0431\u0430\\\u0442\u0440\u043F\u043E\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\project\\wwwroot\\script_edit_transfer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{35AB7863-D16F-4400-AAE7-C56A5607D924}|Project.csproj|solutionrelative:wwwroot\\script_edit_transfer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35AB7863-D16F-4400-AAE7-C56A5607D924}|Project.csproj|c:\\users\\arsen\\desktop\\\u0443\u0447\u0435\u0431\u0430\\\u0442\u0440\u043F\u043E\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\project\\wwwroot\\nomenclature.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{35AB7863-D16F-4400-AAE7-C56A5607D924}|Project.csproj|solutionrelative:wwwroot\\nomenclature.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35AB7863-D16F-4400-AAE7-C56A5607D924}|Project.csproj|c:\\users\\arsen\\desktop\\\u0443\u0447\u0435\u0431\u0430\\\u0442\u0440\u043F\u043E\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35AB7863-D16F-4400-AAE7-C56A5607D924}|Project.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35AB7863-D16F-4400-AAE7-C56A5607D924}|Project.csproj|c:\\users\\arsen\\desktop\\\u0443\u0447\u0435\u0431\u0430\\\u0442\u0440\u043F\u043E\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\project\\wwwroot\\script_nomenclature.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{35AB7863-D16F-4400-AAE7-C56A5607D924}|Project.csproj|solutionrelative:wwwroot\\script_nomenclature.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35AB7863-D16F-4400-AAE7-C56A5607D924}|Project.csproj|c:\\users\\arsen\\desktop\\\u0443\u0447\u0435\u0431\u0430\\\u0442\u0440\u043F\u043E\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\project\\wwwroot\\style_nomenclature.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{35AB7863-D16F-4400-AAE7-C56A5607D924}|Project.csproj|solutionrelative:wwwroot\\style_nomenclature.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "script_transfers.js",
+              "DocumentMoniker": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\wwwroot\\script_transfers.js",
+              "RelativeDocumentMoniker": "wwwroot\\script_transfers.js",
+              "ToolTip": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\wwwroot\\script_transfers.js",
+              "RelativeToolTip": "wwwroot\\script_transfers.js",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAcwLcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-17T12:46:45.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "transfers.html",
+              "DocumentMoniker": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\wwwroot\\transfers.html",
+              "RelativeDocumentMoniker": "wwwroot\\transfers.html",
+              "ToolTip": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\wwwroot\\transfers.html",
+              "RelativeToolTip": "wwwroot\\transfers.html",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAYwG8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-17T12:45:50.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "script_edit_transfer.js",
+              "DocumentMoniker": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\wwwroot\\script_edit_transfer.js",
+              "RelativeDocumentMoniker": "wwwroot\\script_edit_transfer.js",
+              "ToolTip": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\wwwroot\\script_edit_transfer.js",
+              "RelativeToolTip": "wwwroot\\script_edit_transfer.js",
+              "ViewState": "AgIAAPsAAAAAAAAAAAAAwA0BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-02T16:25:19.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "script_nomenclature.js",
+              "DocumentMoniker": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\wwwroot\\script_nomenclature.js",
+              "RelativeDocumentMoniker": "wwwroot\\script_nomenclature.js",
+              "ToolTip": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\wwwroot\\script_nomenclature.js",
+              "RelativeToolTip": "wwwroot\\script_nomenclature.js",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwA0AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-20T13:33:49.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "style_nomenclature.css",
+              "DocumentMoniker": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\wwwroot\\style_nomenclature.css",
+              "RelativeDocumentMoniker": "wwwroot\\style_nomenclature.css",
+              "ToolTip": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\wwwroot\\style_nomenclature.css",
+              "RelativeToolTip": "wwwroot\\style_nomenclature.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-20T12:38:23.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "nomenclature.html",
+              "DocumentMoniker": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\wwwroot\\nomenclature.html",
+              "RelativeDocumentMoniker": "wwwroot\\nomenclature.html",
+              "ToolTip": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\wwwroot\\nomenclature.html",
+              "RelativeToolTip": "wwwroot\\nomenclature.html",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAIwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-20T12:30:29.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Arsen\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u0422\u0420\u041F\u041E\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Project\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAABkAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T11:41:19.792Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = saved || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <link rel="stylesheet" href="theme_base.css">
+    <title>Создать отчет производства — Система учёта молочной продукции</title>
+    <link rel="stylesheet" href="style_create_production.css">
+</head>
+<body>
+    <!-- Во всех страницых -->
+    <div class="sidebar">
+        <h1>Учёт молочной<br>продукции</h1>
+
+        <div class="nav">
+
+            <div class="nav-item">
+                <a href="home.html">Главная</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Справочники <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="nomenclature.html">Номенклатура</a>
+                    <a href="warehouse.html">Склады</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Производство <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="production.html">Отчет производства за смену</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Запасы <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="receipts.html">Поступление товаров</a>
+                    <a href="write_off.html">Списание товаров</a>
+                    <a href="transfers.html">Перемещение товаров</a>
+                    <a href="stock_balance.html">Ведомость по товарам на складах</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Экспорт <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="export.html">Экспорт отчётов</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Настройки <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="users.html">Пользователи</a>
+                    <a href="departments.html">Подразделения</a>
+                    <a href="counterparties.html">Контрагенты</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="header">
+            <h2>Создание отчета производства</h2>
+            <div class="user-info">
+                Пользователь: <b id="currentUser">...</b>
+                <div class="logout-menu" id="logoutMenu">
+                    <button id="logoutBtn">Выйти</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <!-- Основные поля -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Номер документа *</label>
+                    <input type="text" id="docNumber" required>
+                </div>
+                <div class="form-group">
+                    <label>Дата *</label>
+                    <input type="date" id="productionDate" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Подразделение *</label>
+                    <select id="departmentSelect" required>
+                        <option value="">Выберите подразделение</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Склад *</label>
+                    <select id="warehouseSelect" required>
+                        <option value="">Выберите склад</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Ответственный *</label>
+                    <input type="text" id="responsible" required>
+                </div>
+                <div class="form-group">
+                    <label>Комментарий</label>
+                    <textarea id="productionComment" rows="2"></textarea>
+                </div>
+            </div>
+
+            <!-- Таблица выпущенной продукции -->
+            <div class="section">
+                <h3>Выпущенная продукция</h3>
+                <button type="button" id="addProductBtn">Добавить продукцию</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Продукт</th>
+                            <th>Количество</th>
+                            <th>Единица</th>
+                            <th>Партия</th>
+                            <th>Срок годности</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTableBody"></tbody>
+                </table>
+            </div>
+
+            <!-- Таблица использованных материалов -->
+            <div class="section">
+                <h3>Использованные материалы</h3>
+                <button type="button" id="addMaterialBtn">Добавить материал</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Материал</th>
+                            <th>Количество</th>
+                            <th>Единица</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="materialsTableBody"></tbody>
+                </table>
+            </div>
+
+            <div class="form-footer">
+                <button id="saveReportBtn" class="btn save">Сохранить отчет</button>
+                <button id="cancelBtn" class="btn cancel">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="user_menu.js"></script>
+    <script src="script_create_production.js"></script>
+</body>
+</html>

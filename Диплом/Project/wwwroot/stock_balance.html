@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = saved || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <link rel="stylesheet" href="theme_base.css">
+    <link rel="stylesheet" href="style_stock_balance.css">
+    <title>Ведомость по товарам на складах</title>
+    <style>
+        /* Уменьшаем шрифт таблицы */
+        table th, table td {
+            font-size: 12px;
+            padding: 8px 10px;
+        
+        }
+    </style>
+</head>
+<body>
+    <!-- Боковая панель -->
+    <div class="sidebar">
+        <h1>Учёт молочной<br>продукции</h1>
+
+        <div class="nav">
+
+            <div class="nav-item">
+                <a href="home.html">Главная</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Справочники <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="nomenclature.html">Номенклатура</a>
+                    <a href="warehouse.html">Склады</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Производство <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="production.html">Отчет производства за смену</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Запасы <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="receipts.html">Поступление товаров</a>
+                    <a href="write_off.html">Списание товаров</a>
+                    <a href="transfers.html">Перемещение товаров</a>
+                    <a href="stock_balance.html">Ведомость по товарам на складах</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Экспорт <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="export.html">Экспорт отчётов</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#">Настройки <span class="arrow">►</span></a>
+                <div class="submenu">
+                    <a href="users.html">Пользователи</a>
+                    <a href="departments.html">Подразделения</a>
+                    <a href="counterparties.html">Контрагенты</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Основная часть -->
+    <div class="main">
+        <div class="header">
+            <h2>Ведомость по товарам на складах</h2>
+            <div class="user-info">
+                Пользователь: <b id="currentUser">...</b>
+                <div class="logout-menu" id="logoutMenu">
+                    <button id="logoutBtn">Выйти</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="generateBtn">
+                Сформировать
+            </button>
+
+            <select id="warehouseSelect">
+                <option value="">Выберите склад</option>
+            </select>
+
+            <select id="nomenclatureSelect">
+                <option value="">Выберите номенклатуру</option>
+            </select>
+        </div>
+
+        <div class="date-controls">
+            <label for="dateFrom" style="font-size:12px; color:#555;">С:</label>
+            <input type="date" id="dateFrom">
+
+            <label for="dateTo" style="font-size:12px; color:#555;">По:</label>
+            <input type="date" id="dateTo">
+        </div>
+
+        <table id="reportTable">
+            <thead>
+                <tr>
+                    <th>Склад</th>
+                    <th>Номенклатура</th>
+                    <th>Нач. остаток</th>
+                    <th>Поступление</th>
+                    <th>Расход</th>
+                    <th>Кон. остаток</th>
+                    <th>Комментарий</th>
+                    <th>Дата</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="user_menu.js"></script>
+    <script src="script_stock_balance.js"></script>
+</body>
+</html>

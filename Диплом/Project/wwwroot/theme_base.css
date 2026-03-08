@@ -1,0 +1,208 @@
+:root {
+    --bg-main: #f5f7fb;
+    --bg-surface: #ffffff;
+    --bg-subtle: #f0f4fa;
+    --bg-muted: #fafbfe;
+    --text-main: #1f2933;
+    --text-muted: #52616f;
+    --accent: #0a4da3;
+    --accent-strong: #083a7a;
+    --border: #e0e4ec;
+    --hover: #e9f1ff;
+    --table-header: #e8eef9;
+    --input-bg: #fdfdff;
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+:root[data-theme="dark"] {
+    --bg-main: #0f172a;
+    --bg-surface: #111827;
+    --bg-subtle: #1f2937;
+    --bg-muted: #0b1626;
+    --text-main: #e5e7eb;
+    --text-muted: #cbd5e1;
+    --accent: #8cb8ff;
+    --accent-strong: #b7d1ff;
+    --border: #1f2937;
+    --hover: #1b2b44;
+    --table-header: #1f2a3d;
+    --input-bg: #0b1626;
+    --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+body {
+    background: var(--bg-main) !important;
+    color: var(--text-main) !important;
+}
+
+.sidebar {
+    background: var(--bg-surface) !important;
+    border-right: 1px solid var(--border) !important;
+    box-shadow: var(--shadow-soft) !important;
+    color: var(--text-main) !important;
+}
+
+.sidebar h1 {
+    color: var(--accent) !important;
+}
+
+.nav-item > a {
+    color: var(--text-main) !important;
+}
+
+.nav-item > a .arrow {
+    color: var(--text-muted) !important;
+}
+
+.nav-item > a:hover,
+.nav-item > a.active {
+    background-color: var(--hover) !important;
+    border-left-color: var(--accent) !important;
+    color: var(--accent) !important;
+}
+
+.submenu {
+    background: var(--bg-surface) !important;
+    border-left: 4px solid var(--accent) !important;
+    box-shadow: var(--shadow-soft) !important;
+}
+
+.submenu a {
+    color: var(--text-main) !important;
+}
+
+.submenu a:hover,
+.submenu a.active {
+    background: var(--hover) !important;
+    color: var(--accent) !important;
+}
+
+.main {
+    background: var(--bg-main) !important;
+}
+
+.header h2,
+.section-title {
+    color: var(--accent) !important;
+}
+
+.current-time {
+    background: var(--bg-subtle) !important;
+    color: var(--text-muted) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.user-info {
+    color: var(--text-main) !important;
+}
+
+.logout-menu {
+    background: var(--bg-surface) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: var(--shadow-soft) !important;
+}
+
+.form-container,
+.section,
+.card,
+.chart-container,
+.table-container,
+.auth-container {
+    background: var(--bg-surface) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: var(--shadow-soft) !important;
+}
+
+.section {
+    background: var(--bg-subtle) !important;
+}
+
+.card h3,
+.form-group label {
+    color: var(--text-muted) !important;
+}
+
+.card-value,
+.card-icon {
+    color: var(--accent) !important;
+}
+
+table {
+    background: var(--bg-surface) !important;
+}
+
+th {
+    background-color: var(--table-header) !important;
+    color: var(--accent) !important;
+}
+
+:root[data-theme="dark"] th {
+    color: var(--text-main) !important;
+}
+
+td,
+th {
+    color: var(--text-main) !important;
+    border-color: var(--border) !important;
+}
+
+tr:nth-child(even) {
+    background-color: var(--bg-muted) !important;
+}
+
+tr:hover {
+    background-color: var(--hover) !important;
+}
+
+.controls input,
+.controls select,
+.controls textarea,
+.filters input,
+.filters select,
+.filters textarea,
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: var(--input-bg) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.controls button {
+    background: var(--accent) !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.modal-content {
+    background: var(--bg-surface) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.modal-header {
+    background: var(--accent) !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+.modal-footer {
+    background: var(--bg-subtle) !important;
+    border-top: 1px solid var(--border) !important;
+}
+
+input,
+select,
+textarea {
+    background: var(--input-bg) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--border) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-muted) !important;
+}
+
+
